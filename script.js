@@ -54,3 +54,15 @@ function goSubjectSelect(){
   // 科目選択画面を表示
   document.getElementById("subject-screen").style.display = "block";
 }
+
+ function goDifficultySelect()}
+  // 科目選択画面を隠す
+  document.getElementById("subject-screen").style.display = "none";
+
+  // 難易度画面を表示
+  document.getElementById("difficulty-screen").style.display = "block";
+}
+
+  function goNext(){
+   alert("ここから先は次回作るぜえー");
+}
