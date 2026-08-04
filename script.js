@@ -66,3 +66,41 @@ function goSubjectSelect(){
   function goNext(){
    alert("ここから先は次回作るぜえー");
 }
+
+  // ページを開いたらNEW表示を更新
+  updateNews();
+ function updateNews(){
+
+  // すべてのニュースを取得
+  const items = document.querySelectorAll(".news-item");
+
+  // 今日の日付
+  const today = new Date();
+
+  items.forEach(item => {
+
+    // 日付
+    const dateElement = item.querySelector(".news-date");
+
+    // NEW
+    const newElement = item.querySelector(".news-new");
+
+    // NEWが無い記事はスキップ
+    if(!newElement) return;
+
+    // data-dateを取得
+    const newsDate = new Date(dateText);
+
+    // Date型へ変換
+    const newsDate = new Date(dateText);
+
+    // 日数差を計算
+    const diff = (today - newsDate) / (1000 * 60 * 60 * 24);
+
+    // 3日より後ならNEWを消す
+    if(diff > 3){
+      newElement.style.display = "none";
+    }
+});
+
+ }
