@@ -45,3 +45,12 @@ function updatePeople(){
  document.getElementById("people-info").textContent =
   "市民：" + citizens + "人  おのたや：" + wolves + "人";
 }
+
+function goSubjectSelect(){
+
+  // おのたや画面を消す
+  document.getElementById("wolf-screen").style.display = "none";
+
+  // 科目選択画面を表示
+  document.getElementById("subject-screen").style.display = "block";
+}
