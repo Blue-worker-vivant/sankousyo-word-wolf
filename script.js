@@ -55,7 +55,7 @@ function goSubjectSelect(){
   document.getElementById("subject-screen").style.display = "block";
 }
 
- function goDifficultySelect()}
+ function goDifficultySelect(){
   // 科目選択画面を隠す
   document.getElementById("subject-screen").style.display = "none";
 
