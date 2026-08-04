@@ -81,11 +81,10 @@ function goSubjectSelect(){
     // 日付
     const dateElement = item.querySelector(".news-date");
 
-    // NEW
-    const newElement = item.querySelector(".news-new");
-
-    // NEWが無い記事はスキップ
-    if(!newElement) return;
+    // NEW表示を作る
+    const newElement = document.createElement("span");
+    newElement.className = "news-new";
+    newElement.textContent = "---NEW---";
 
     // data-dateを取得
     const dateText = dateElement.dataset.date;
