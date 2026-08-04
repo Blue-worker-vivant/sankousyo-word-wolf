@@ -15,7 +15,7 @@ function goWolfSelect(){
  const wolfSelect = document.getElementById("wolf-count");
 
  // 一度リセット
- wolfSelect.InnerHTML = "";
+ wolfSelect.innerHTML = "";
 
  // 1人〜n-2人まで追加
  for(let i = 1; i <= players - 2; i++){
@@ -26,6 +26,9 @@ function goWolfSelect(){
 
  // 最初の人数表示
  updatePeople();
+
+  // 変更したら人数更新
+ wolfSelect.addEventListener("change", updatePeople);
 }
 
 // 市民人数表示
