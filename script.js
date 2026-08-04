@@ -43,5 +43,5 @@ function updatePeople(){
  const citizens = players - wolves;
 
  document.getElementById("people-info").textContent =
-  "おのたや：" + citizens + "人  おのたや：" + wolves + "人";
+  "市民：" + citizens + "人  おのたや：" + wolves + "人";
 }
