@@ -95,9 +95,9 @@ function goSubjectSelect(){
     // 日数差を計算
     const diff = (today - newsDate) / (1000 * 60 * 60 * 24);
 
-    // 3日より後ならNEWを消す
-    if(diff > 3){
-      newElement.style.display = "none";
+    // 3日以内ならNEWを表示
+    if(diff < 3){
+      dateElement.after(newElement);
     }
 });
 
