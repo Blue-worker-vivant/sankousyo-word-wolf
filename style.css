@@ -2,11 +2,7 @@ label {
   font-size: 28px;
   color: blue;
 }
-select {
-  font-size: 28px;
-  transform: scale(2);
-  transform-origin: left center;
-}
+
 body {
   background: linear-gradient(135deg, #9fd8ff, #dff6ff);
   font-family: "Horagino Sans", "Yu Gothic", sans-serif;
@@ -29,7 +25,7 @@ label {
 }
 select {
   font-size: 28px;
-  padding: 8px;
+  padding: 5px 10px;
   border-radius: 10px;
 }
 button {
