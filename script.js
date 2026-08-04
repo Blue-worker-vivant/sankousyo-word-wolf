@@ -8,10 +8,10 @@ function goWolfSelect(){
  // 最初の画面を消す
  document.getElementById("start-screen").style.display = "none";
 
- // ウルフ画面を表示
+ // おのたや画面を表示
  document.getElementById("wolf-screen").style.display = "block";
 
- // ウルフ選択肢を作る
+ // おのたや選択肢を作る
  const wolfSelect = document.getElementById("wolf-count");
 
  // 一度リセット
@@ -43,5 +43,5 @@ function updatePeople(){
  const citizens = players - wolves;
 
  document.getElementById("people-info").textContent =
-  "市民：" + citizens + "人  ウルフ：" + wolves + "人";
+  "市民：" + citizens + "人  おのたや：" + wolves + "人";
 }
