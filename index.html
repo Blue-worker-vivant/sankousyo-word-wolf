@@ -39,9 +39,25 @@
   <select id="wolf-count"></select>
   <p id="people-info"></p>
 
+  <button onclick="goSubjectSelect()">次へ</button>
+</div>
+
+<div id="subject-screen" style="display:none;">
+  <h2>参考書の科目をどう選ぶんだあ</h2>
+
+  <label>
+    <input type="radio" name="subject-mode" value="self" checked>
+    自分で選択
+  </label>
+  <br><br>
+  <label>
+    <input type="radio" name="subject-mode" value="auto">
+    おまかせ
+  </label>
+  <br><br>
   <button>次へ</button>
 </div>
-    
+
   <p>ver.0.2.0</p >
 
   <script src="script.js"></script>
