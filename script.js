@@ -67,8 +67,7 @@ function goSubjectSelect(){
    alert("ここから先は次回作るぜえー");
 }
 
-  // ページを開いたらNEW表示を更新
-  updateNews();
+
  function updateNews(){
 
   // すべてのニュースを取得
@@ -89,7 +88,7 @@ function goSubjectSelect(){
     if(!newElement) return;
 
     // data-dateを取得
-    const newsDate = new Date(dateText);
+    const dateText = dateElement.dataset.date;
 
     // Date型へ変換
     const newsDate = new Date(dateText);
@@ -104,3 +103,7 @@ function goSubjectSelect(){
 });
 
  }
+
+window.onload = function(){
+  updateNews();
+}
