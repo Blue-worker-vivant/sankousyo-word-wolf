@@ -8,6 +8,26 @@
   <title>参考書ワードウルフ 〜おのたやはみそお〜 ver.0.3.0</title>
 </head>
 <body>
+
+<div id="lock-screen">
+  <h2>ロック</h2>
+
+  <p>パスワードを入力しろお</p>
+
+  <input
+    type="password"
+    id="password"
+    placeholder="例：abc1234"
+  >
+
+  <br><br>
+
+  <button onclick="checkPassword()">入る</button>
+
+  <p id="password-error"></p>
+</div>
+
+<div id="main-screen" style=display:none;">
   <h1>📚参考書ワードウルフ<br>
       〜おのたやはみそお〜
   </h1>
@@ -117,7 +137,7 @@
 
   <button onclick="goNext()">次へ</button>
 </div>
-
+</div>
   <script src="script.js"></script>
 </body>
 </html>
