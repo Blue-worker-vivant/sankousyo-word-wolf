@@ -15,6 +15,19 @@
        "パスワードが違うやないかい！";
    }
  }
+
+//
+function togglePassword(){
+
+  const passwordBox = document.getElementById("password");
+
+  if(passwordBox.type === "password"){
+    passwordBox.type === "text";
+  }else{
+    passwordBox.type = "password";
+  }
+}
+
 function goWolfSelect(){
  // 選んだ人数を取得
  const playersText = document.getElementById("players").value;
