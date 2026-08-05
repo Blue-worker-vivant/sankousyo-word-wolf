@@ -5,10 +5,10 @@
    const input = document.getElementById("password").value;
 
    // 正しい場合
-   if(input === PASSWORD{
+   if(input === PASSWORD){
 
      document.getElementById("lock-screen").style.display = "none";
-     document.getElementById("main-screen").style.display = "block"
+     document.getElementById("main-screen").style.display = "block";
 
    }else{
      document.getElementById("password-error").textContent = 
