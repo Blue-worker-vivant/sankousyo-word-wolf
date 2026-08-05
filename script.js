@@ -22,7 +22,7 @@ function togglePassword(){
   const passwordBox = document.getElementById("password");
 
   if(passwordBox.type === "password"){
-    passwordBox.type === "text";
+    passwordBox.type = "text";
   }else{
     passwordBox.type = "password";
   }
