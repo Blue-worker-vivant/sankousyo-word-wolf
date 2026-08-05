@@ -1,3 +1,20 @@
+ // パスワード
+ const PASSWORD = "sex4545";
+ function checkPassword(){
+   // 入力されたパスワード
+   const input = document.getElementById("password").value;
+
+   // 正しい場合
+   if(input === PASSWORD{
+
+     document.getElementById("lock-screen").style.display = "none";
+     document.getElementById("main-screen").style.display = "block"
+
+   }else{
+     document.getElementById("password-error").textContent = 
+       "パスワードが違うやないかい！";
+   }
+ }
 function goWolfSelect(){
  // 選んだ人数を取得
  const playersText = document.getElementById("players").value;
