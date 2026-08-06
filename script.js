@@ -11,8 +11,19 @@
      document.getElementById("main-screen").style.display = "block";
 
    }else{
-     document.getElementById("password-error").textContent = 
-       "パスワードが違うやないかい！";
+    let message = "パスワードが違うやないかい！";
+
+    // 「sex」が合っている
+    if(input.includes("sex")){
+     message += "<br>セックスは出来ている";
+     }
+
+    // 「4545」が合っている
+    if(input.includes("4545")){
+     message += "<br>シコることは出来ている";
+    }
+
+    document.getElementById("password-error").innerHTML = message;
    }
  }
 
