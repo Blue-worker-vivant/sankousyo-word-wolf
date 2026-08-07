@@ -47,12 +47,22 @@ function goWolfSelect(){
 
  //「5人」→5に変換
  const players = Number(playersText.replace("人",""));
- 
- // 最初の画面を消す
- document.getElementById("start-screen").style.display = "none";
 
- // おのたや画面を表示
+ // Loading sexを表示
+ document.getElementById("loading-screen").style.display = "flex";
+
+ setTimeout(function(){
+
+   // Loading sexを消す
+   document.getElementById("loading-screen").style.display = "none";
+
+   // 最初の画面を消す
+   document.getElementById("start-screen").style.display = "none";
+
+　 // おのたや画面を表示
  document.getElementById("wolf-screen").style.display = "block";
+
+}, 500);
 
  // おのたや選択肢を作る
  const wolfSelect = document.getElementById("wolf-count");
