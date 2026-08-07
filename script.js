@@ -189,3 +189,12 @@ window.onload = function(){
    document.getElementById("main-screen").style.display = "block";
   }
 }
+
+function goHome(){
+
+  document.getElementById("start-screen").style.display = "block";
+  document.getElementById("wolf-screen").style.display = "none";
+  document.getElementById("subject-screen").style.display = "none";
+  document.getElementById("subject-list--screen").style.display = "none";
+  document.getElementById("difficulty-screen").style.display = "none";
+}
