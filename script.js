@@ -17,12 +17,12 @@
 
     // 「sex」が合っている
     if(input.includes("sex")){
-     message += "<br>セックスは出来ている";
+     message += "<br>おおいセックスは出来ている";
      }
 
     // 「4545」が合っている
     if(input.includes("4545")){
-     message += "<br>シコることは出来ている";
+     message += "<br>おおいシコることは出来ている";
     }
 
     document.getElementById("password-error").innerHTML = message;
@@ -98,6 +98,31 @@ function goSubjectSelect(){
   document.getElementById("subject-screen").style.display = "block";
 }
 
+ function checkSubjectMode(){
+
+  const mode =document.querySelector(
+   'input[name="subject-mode"]:checked'
+  ).value;
+
+  if(mode === "self"){
+   goSubjectList();
+  }else{
+   goDifficultySelect();
+  }
+}
+
+ function goSubjectList(){
+  document.getElementById("subject-screen").style.display = "none"
+
+  document.getElementById("subject-list-screen").style.display = "block";
+}
+
+ function goDifficultyFromList(){
+  document.getElementById("subject-list-screen").style.display = "none";
+
+  document.getElementById("difficulty-screen").style.display = "block";
+ }
+
  function goDifficultySelect(){
   // 科目選択画面を隠す
   document.getElementById("subject-screen").style.display = "none";
@@ -149,7 +174,7 @@ function goSubjectSelect(){
 window.onload = function(){
   updateNews();
 
-  if(sessionStorage,getItem("loggedIn") === "true"){
+  if(sessionStorage.getItem("loggedIn") === "true"){
    document.getElementById("lock-screen").style.display = "none";
    document.getElementById("main-screen").style.display = "block";
   }
