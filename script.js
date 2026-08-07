@@ -7,6 +7,8 @@
    // 正しい場合
    if(input === PASSWORD){
 
+     sessionStorage.setItem("loggedIn", "true");
+
      document.getElementById("lock-screen").style.display = "none";
      document.getElementById("main-screen").style.display = "block";
 
@@ -146,4 +148,9 @@ function goSubjectSelect(){
 
 window.onload = function(){
   updateNews();
+
+  if(sessionStorage,getItem("loggedIn") === "true"){
+   document.getElementById("lock-screen").style.display = "none";
+   document.getElementById("main-screen").style.display = "block";
+  }
 }
