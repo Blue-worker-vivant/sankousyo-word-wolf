@@ -112,7 +112,7 @@ function goSubjectSelect(){
 }
 
  function goSubjectList(){
-  document.getElementById("subject-screen").style.display = "none"
+  document.getElementById("subject-screen").style.display = "none";
 
   document.getElementById("subject-list-screen").style.display = "block";
 }
