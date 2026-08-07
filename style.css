@@ -105,15 +105,19 @@ button:hover{
 #password{
   width: 400px;
   font-size: 24px;
-  padding: 12px;
-  border-radius: 10px;
+  padding: 12px 16px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  outline: none;
 }
 
 #lock-screen label{
   font-size: 18px;
   color: black;
 }
-
+#password:focus{
+  border-color: #4da3ff;
+}
 #lock-screen input[type="checkbox"]{
   transform: scale(0.9);
 }
