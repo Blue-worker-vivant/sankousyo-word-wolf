@@ -298,3 +298,22 @@ function goHome(){
   document.getElementById("difficulty-screen").style.display = "none";
   document.getElementById("difficulty-list-screen").style.display = "none";
 }
+
+function goNextFromDifficulty(){
+
+  const difficulty =
+    document.getElementById("difficulty-select").value;
+
+  if(!difficulty || difficulty === "選べえ"){
+    alert("難易度を選んでくれえ！");
+    return;
+  }
+
+  const books = getRandomBooks("英語", difficulty');
+
+  alert(
+    "今回の参考書は\n\n" +
+    books[0] + "\n" +
+    books[1]
+  );
+}
