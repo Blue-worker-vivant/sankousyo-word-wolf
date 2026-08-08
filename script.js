@@ -40,6 +40,28 @@ const bookData = {
      }
 };
 
+function getRandomBooks(subject, difficulty){
+
+  // その科目・難易度のグループを取得
+  const groups = bookData[subject][difficulty];
+
+  // グループ名を配列にする
+  const groupNames = Object.keys(groups);
+
+  // グループをランダムに1つ選ぶ
+  const randomGroup =
+    groupNames[Math.floor(Math.random() * groupNames.length)];
+
+  // 選ばれたグループの参考書一覧
+  const books = groups[randomGroup];
+
+  // 参考書をシャッフル
+  const shuffled = [...books].sort(() => Math.random() - 0.5);
+
+  // 2冊だけ取り出す
+  return shuffled.slice(0, 2);
+}
+
 function showLoading(callback){
 
    // Loading sexを表示
