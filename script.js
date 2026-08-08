@@ -139,6 +139,28 @@ function goSubjectSelect(){
   document.getElementById("subject-list-screen").style.display = "block";
 }
 
+ function checkDifficultyMode(){
+
+  const mode =document.querySelector(
+   'input[name="difficulty-mode"]:checked'
+  ).value;
+
+  if(mode === "self"){
+   goDifficultyList();
+  }else{
+   goNext();
+  }
+}
+
+ function goDifficultyList(){
+   showLoading(function(){
+
+     document.getElementById("difficulty-screen").style.display = "none";
+
+     document.getElementById("difficulty-list-screen").style.display = "block";
+   });
+ }
+
  function goDifficultyFromList(){
   document.getElementById("subject-list-screen").style.display = "none";
 
@@ -207,6 +229,7 @@ function goHome(){
   document.getElementById("start-screen").style.display = "block";
   document.getElementById("wolf-screen").style.display = "none";
   document.getElementById("subject-screen").style.display = "none";
-  document.getElementById("subject-list--screen").style.display = "none";
+  document.getElementById("subject-list-screen").style.display = "none";
   document.getElementById("difficulty-screen").style.display = "none";
+  document.getElementById("difficulty-list-screen").style.display = "none";
 }
