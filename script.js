@@ -63,7 +63,8 @@ function getRandomBooks(subject, difficulty){
 }
 
 const textBooks = getRandomBooks("英語", "万人が知るもの");
-console.log(testBooks);
+alert(testBooks.join("\n"));
+
 function showLoading(callback){
 
    // Loading sexを表示
