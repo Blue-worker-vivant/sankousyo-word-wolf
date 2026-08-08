@@ -309,7 +309,7 @@ function goNextFromDifficulty(){
     return;
   }
 
-  const books = getRandomBooks("英語", difficulty');
+  const books = getRandomBooks("英語", difficulty);
 
   alert(
     "今回の参考書は\n\n" +
