@@ -1,4 +1,20 @@
- // パスワード
+ function showLoading(callback){
+
+   // Loading sexを表示
+   document.getElementById("loading-screen").style.display = "flex";
+
+   // 0.5秒後に次の処理
+   setTimeout(function(){
+
+    // Loading sexを消す
+    document.getElementById("loading-screen").style.display = "none";
+
+    // 次の画面へ
+    callback();
+   }, 500);
+}
+
+// パスワード
  const PASSWORD = "sex4545";
  function checkPassword(){
    // 入力されたパスワード
@@ -48,21 +64,14 @@ function goWolfSelect(){
  //「5人」→5に変換
  const players = Number(playersText.replace("人",""));
 
- // Loading sexを表示
- document.getElementById("loading-screen").style.display = "flex";
+showLoading(function(){
 
- setTimeout(function(){
+ // 最初の画面を消す
+ document.getElementById("start-screen").style.display = "none";
 
-   // Loading sexを消す
-   document.getElementById("loading-screen").style.display = "none";
-
-   // 最初の画面を消す
-   document.getElementById("start-screen").style.display = "none";
-
-　 // おのたや画面を表示
+ // おのたや画面を表示
  document.getElementById("wolf-screen").style.display = "block";
-
-}, 500);
+});
 
  // おのたや選択肢を作る
  const wolfSelect = document.getElementById("wolf-count");
@@ -101,11 +110,14 @@ function updatePeople(){
 
 function goSubjectSelect(){
 
+  showLoading(function(){
+
   // おのたや画面を消す
   document.getElementById("wolf-screen").style.display = "none";
 
   // 科目選択画面を表示
   document.getElementById("subject-screen").style.display = "block";
+});
 }
 
  function checkSubjectMode(){
