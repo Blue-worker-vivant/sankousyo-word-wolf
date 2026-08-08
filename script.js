@@ -38,6 +38,7 @@ const bookData = {
         "英語長文 レベル別問題集"
       ]
      }
+  }
 };
 
 function getRandomBooks(subject, difficulty){
@@ -61,9 +62,6 @@ function getRandomBooks(subject, difficulty){
   // 2冊だけ取り出す
   return shuffled.slice(0, 2);
 }
-
-const textBooks = getRandomBooks("英語", "万人が知るもの");
-alert(testBooks.join("\n"));
 
 function showLoading(callback){
 
