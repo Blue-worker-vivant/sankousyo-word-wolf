@@ -2,7 +2,7 @@ const bookData = {
 
   "英語": {
 
-    "万人が知るもの": [
+    "万人が知るもの": {
       "単語": [
         "英単語ターゲット1900",
         "システム英単語",
@@ -35,7 +35,7 @@ const bookData = {
       "英語長文": [
         "関正夫のThe rules英語長文問題集",
         "英語長文ポラリス",
-        "英語長文 レベル別問題集
+        "英語長文 レベル別問題集"
       ]
      }
 };
@@ -62,6 +62,8 @@ function getRandomBooks(subject, difficulty){
   return shuffled.slice(0, 2);
 }
 
+const textBooks = getRandomBooks("英語", "万人が知るもの");
+console.log(testBooks);
 function showLoading(callback){
 
    // Loading sexを表示
