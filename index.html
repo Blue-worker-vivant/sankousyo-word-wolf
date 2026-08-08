@@ -187,8 +187,29 @@
 
   <br><br>
 
-  <button onclick="goNext()">次へ</button>
+  <button onclick="checkDifficultyMode()">次へ</button>
 </div>
+
+<div id="difficulty-list-screen" style="display:none;">
+  <h2>難易度を選んでからパコれ</h2>
+
+  <label for="difficulty-select">難易度</label>
+  <br><br>
+
+  <select id="difficulty-select">
+
+    <option selected disabled>選べえ</option>
+
+    <option>万人が知るもの</option>
+    <option>学校で配布されたもの</option>
+    <option>少し知らない人も出てくる</option>
+    <option>玄人</option>
+
+  </select>
+
+  <br><br>
+
+  <button onclick="goNextFromDifficulty()">決定</button>
 </div>
 
 <div id="loading-screen">
