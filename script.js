@@ -1,4 +1,46 @@
- function showLoading(callback){
+const bookData = {
+
+  "英語": {
+
+    "万人が知るもの": [
+      "単語": [
+        "英単語ターゲット1900",
+        "システム英単語",
+        "必携英単語 LEAP"
+      ],
+
+      "熟語": [
+        "英熟語ターゲット1000",
+        "中学英熟語500"
+      ],
+
+      "英文法": [
+        "大岩のいちばんはじめの英文法",
+        "英文法ポラリス1",
+        "ultimate",
+        "Evergreen",
+        "Vintage"
+      ],
+
+      "英文解釈": [
+        "超入門英文解釈の技術60",
+        "入門英文解釈の技術70",
+        "英文解釈の技術100",
+        "英文解釈ポラリス",
+        "英文熟考 上・下",
+        "入門英文問題精講",
+        "動画でわかる英文法"
+      ],
+
+      "英語長文": [
+        "関正夫のThe rules英語長文問題集",
+        "英語長文ポラリス",
+        "英語長文 レベル別問題集
+      ]
+     }
+};
+
+function showLoading(callback){
 
    // Loading sexを表示
    document.getElementById("loading-screen").style.display = "flex";
