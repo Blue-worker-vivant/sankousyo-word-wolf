@@ -180,10 +180,77 @@ function goSubjectSelect(){
   // おのたや画面を消す
   document.getElementById("wolf-screen").style.display = "none";
 
-  // 科目選択画面を表示
-  document.getElementById("subject-screen").style.display = "block";
-});
+  // 呼び名画面を表示
+  document.getElementById("nickname-screen").style.display = "block";
+
+  // 呼び名入力欄を作る
+  createNicknameInputs();
+ });
 }
+
+ function createNicknameInputs(){
+  const playersText = document.getElementById("players").value;
+  const players = Number(playersText.replace("人",""));
+
+  const nicknameList = document.getElementById("nickname-list");
+
+  // 一度リセット
+  nicknameList.innerHTML = "";
+
+  // 人数分の入力欄を作る
+  for(let i = 1; i <= players; i++){
+
+    const label = document.createElement("label");
+    label.textContent = "プレイヤー" + i;
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "nickname-input";
+    input.placeholder = "呼び名";
+
+    nicknameList.appendChild(label);
+    nicknameList.appendChild(input);
+    nicknameList.appendChild(document.createElement("br"));
+    nicknameList.appendChild(document.createElement("br"));
+  }
+ }
+
+ function goSubjectSelectFromNickname(){
+
+   const inputs =
+     document.querySelectorAll(".nickname-input");
+
+   const nicknames = [];
+
+   inputs.forEach(input => {
+
+     const name = input.value.trim();
+
+     if(name === ""){
+       alert("全員の呼び名を入れろお");
+       return;
+     }
+
+     nicknames.push(name);
+   });
+
+   // 1人でも空欄があったら終了
+   if(nicknames.length !== inputs.length){
+     return;
+   }
+
+   // 呼び名を保存
+   window.nicknames = nicknames;
+
+   showLoading(function(){
+
+     // 呼び名画面を消す
+     document.getElementById("nickname-screen").style.display = "none";
+
+     // 科目選択画面を表示
+     document.getElementById("subject-screen").style.display = "block";
+   });
+ }
 
  function checkSubjectMode(){
 
@@ -293,6 +360,7 @@ function goHome(){
 
   document.getElementById("start-screen").style.display = "block";
   document.getElementById("wolf-screen").style.display = "none";
+  document.getElementById("nickname-screen").style.display = "none";
   document.getElementById("subject-screen").style.display = "none";
   document.getElementById("subject-list-screen").style.display = "none";
   document.getElementById("difficulty-screen").style.display = "none";
