@@ -229,14 +229,24 @@ function goSubjectSelect(){
 
      const name = input.value.trim();
 
+     // 空欄チェック
      if(name === ""){
-       document.getElementById("nickname-error").texxtContent =
+       document.getElementById("nickname-error").textContent =
          "全員の呼び名を入れろお";
        return;
      }
 
      nicknames.push(name);
-   });
+   }
+
+   // 重複チェック
+   const uniqueNicknames = new Set(nicknames);
+
+   if(uniqueNicknames.size !== nicknames.length){
+     document.getElementById("nickname-error").textContent =
+       "同じ呼び名は使えんぞ阿呆。ホハア！";
+     return;
+   }
 
    // 呼び名を保存
    window.nicknames = nicknames;
