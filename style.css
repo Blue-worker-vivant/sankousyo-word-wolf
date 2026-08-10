@@ -140,3 +140,8 @@ button:hover{
 
   font-size: 30px;
 }
+
+#nickname-list label{
+  font-size: 20px;
+  color: black;
+}
