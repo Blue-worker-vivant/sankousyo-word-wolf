@@ -222,22 +222,21 @@ function goSubjectSelect(){
 
    const nicknames = [];
 
-   inputs.forEach(input => {
+   // エラーメッセージを一旦消す
+   document.getElementById("nickname-error").textContent = "";
+
+   for(let input of inputs){
 
      const name = input.value.trim();
 
      if(name === ""){
-       alert("全員の呼び名を入れろお");
+       document.getElementById("nickname-error").texxtContent =
+         "全員の呼び名を入れろお";
        return;
      }
 
      nicknames.push(name);
    });
-
-   // 1人でも空欄があったら終了
-   if(nicknames.length !== inputs.length){
-     return;
-   }
 
    // 呼び名を保存
    window.nicknames = nicknames;
