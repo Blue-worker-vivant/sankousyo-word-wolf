@@ -427,6 +427,7 @@ function goNextFromDifficulty(){
 
   // 最初のプレイヤーを表示
   window.currentPlayer = 0;
+  showNextPlayer();
 }
 
 function showNextPlayer(){
