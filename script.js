@@ -409,9 +409,20 @@ function goNextFromDifficulty(){
   showNextPlayer();
 }
 
-  alert(
-    "今回の参考書は\n\n" +
-    books[0] + "\n" +
-    books[1]
-  );
+function showNextPlayer(){
+
+  // 現在のプレイヤーの呼び名を取得
+  const playerName =
+    window.nicknames[window.currentPlayer];
+
+  // プレイヤー名を表示
+  document.getElementById("game-player-name").textContent =
+    playerName + " と名乗るハゲ";
+
+  // メッセージを表示
+  document.getElementById("game-message").textContent =
+    "こいつめ、大丈夫か、参考書の名前を覚えろ！";
+
+  // 次のプレイヤー番号へ
+  window.currentPlayer++;
 }
