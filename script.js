@@ -396,6 +396,26 @@ function goNextFromDifficulty(){
   // おのたや側の参考書を保存
   window.wolfBook = books[1];
 
+  // おのたやの人数を保存
+  window.wolfCount =
+    Number(
+      document.getElementById("wolf-count").value.replace("人","")
+    );
+
+  // プレイヤー番号を作る
+  const playerNumbers = [];
+
+  for(let i = 0; i < window.nicknames.length; i++){
+    playerNumbers.push(i);
+  }
+
+  // シャッフル
+  playerNumbers.sort(() => Math.random() - 0.5);
+
+  // おのたや人数分だけ選ぶ
+  window.wolves =
+    playerNumbers.slice(0, window.wolfCount);
+
   // 最初のプレイヤー
   window.currentPlayer = 0;
 
@@ -406,22 +426,47 @@ function goNextFromDifficulty(){
   document.getElementById("game-screen").style.display = "block";
 
   // 最初のプレイヤーを表示
-  showNextPlayer();
+  window.currentPlayer = 0;
 }
 
 function showNextPlayer(){
 
-  // 現在のプレイヤーの呼び名を取得
+  // 全員終わったら終了
+  if(window.currentPlayer >= window.nicknames.length){
+
+    document.getElementById("game-player-name").textContent =
+      "全員確認終わりだあ";
+
+    document.getElementById("game-message").textContent =
+      "ゲームを始めるぞお";
+
+    return;
+  }
+
+  // 現在のプレイヤー
   const playerName =
     window.nicknames[window.currentPlayer];
 
-  // プレイヤー名を表示
-  document.getElementById("game-player-name").textContent =
-    playerName + " と名乗るハゲ";
+  // おのたやかどうか確認
+  const isWolf =
+    window.wolves.includes(window.currentPlayer);
 
-  // メッセージを表示
+  // プレイヤー名
+  document.getElementById("game-player-name").textContent =
+    playerName + "の番";
+
+  // 参考書を表示
+  if(isWolf){
+
+    document.getElementById("game-message").textContent =
+      "あなたはおのたや！\n\n" +
+      "参考書：" + window.wolfBook;
+  }else{
+
   document.getElementById("game-message").textContent =
-    "こいつめ、大丈夫か、参考書の名前を覚えろ！";
+    "あなたは市民！\n\n" +
+    "参考書：" + window.citizenBook;
+  }
 
   // 次のプレイヤー番号へ
   window.currentPlayer++;
