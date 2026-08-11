@@ -448,27 +448,11 @@ function showNextPlayer(){
   const playerName =
     window.nicknames[window.currentPlayer];
 
-  // おのたやかどうか確認
-  const isWolf =
-    window.wolves.includes(window.currentPlayer);
-
   // プレイヤー名
   document.getElementById("game-player-name").textContent =
     playerName + "の番";
 
-  // 参考書を表示
-  if(isWolf){
-
-    document.getElementById("game-message").textContent =
-      "あなたはおのたや！\n\n" +
-      "参考書：" + window.wolfBook;
-  }else{
-
+  // まだ参考書は表示しない
   document.getElementById("game-message").textContent =
-    "あなたは市民！\n\n" +
-    "参考書：" + window.citizenBook;
-  }
-
-  // 次のプレイヤー番号へ
-  window.currentPlayer++;
+    "「確認する」を押すと、あなたのお題が出るぞお";
 }
