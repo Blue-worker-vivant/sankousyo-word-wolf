@@ -381,12 +381,33 @@ function goNextFromDifficulty(){
   const difficulty =
     document.getElementById("difficulty-select").value;
 
+  // 難易度が選ばれていない場合
   if(!difficulty || difficulty === "選べえ"){
     alert("難易度を選んでくれえ！");
     return;
   }
 
+  // 参考書を2冊ランダムに選ぶ
   const books = getRandomBooks("英語", difficulty);
+
+  // 市民側の参考書を保存
+  window.citizenBook = books[0];
+
+  // おのたや側の参考書を保存
+  window.wolfBook = books[1];
+
+  // 最初のプレイヤー
+  window.currentPlayer = 0;
+
+  // 難易度選択画面を消す
+  document.getElementById("difficulty-list-screen").style.display = "none";
+
+  // ゲーム画面を表示
+  document.getElementById("game-screen").style.display = "block";
+
+  // 最初のプレイヤーを表示
+  showNextPlayer();
+}
 
   alert(
     "今回の参考書は\n\n" +
