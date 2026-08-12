@@ -425,10 +425,22 @@ function goNextFromDifficulty(){
   // ゲーム画面を表示
   document.getElementById("game-screen").style.display = "block";
 
-  // 最初のプレイヤーを表示
+  // 最初のプレイヤー
   window.currentPlayer = 0;
-  showNextPlayer();
-}
+
+  // まだお題は表示していない
+  window.showingBook = false;
+
+  // 最初のプレイヤーを表示
+  const playerName =
+    window.nicknames[window.currentPlayer];
+
+  document.getElementById("game-player-name").textContent =
+    playerName + "の番";
+
+  document.getElementById("game-message").textContent =
+    "「確認する」をおすと、あなたのお題が表示されます。";
+
 
   // 現在のプレイヤー
   window.currentPlayer = 0;
