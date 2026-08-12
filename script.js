@@ -430,16 +430,25 @@ function goNextFromDifficulty(){
   showNextPlayer();
 }
 
-function showNextPlayer(){
+  // 現在のプレイヤー
+  window.currentPlayer = 0;
 
-  // 全員終わったら終了
-  if(window.currentPlayer >= window.nicknames.length){
+  // お題を表示している状態かどうか
+  window.showingBook = false;
 
-    document.getElementById("game-player-name").textContent =
-      "全員確認終わりだあ";
+  function gameButton(){
 
-    document.getElementById("game-message").textContent =
-      "ゲームを始めるぞお";
+  // ①お題をまだ表示していない
+  if(!window.showingBook){
+
+    // 全員終わったら終了
+    if(window.currentPlayer >= window.nicknames.length){
+
+      document.getElementById("game-player-name").textContent =
+        "全員確認終わりだあ";
+
+      document.getElementById("game-message").textContent =
+        "ゲームを始めるぞお";
 
     return;
   }
@@ -451,6 +460,37 @@ function showNextPlayer(){
   // プレイヤー名
   document.getElementById("game-player-name").textContent =
     playerName + "の番";
+
+  // お題を表示
+  const isWolf =
+    window.wolves.includes(window.currentPlayer);
+
+  if(isWolf){
+
+    document.getElementById("game-message").textContent =
+      "あなたのお題は……\n\n" +
+      window.wolfBook;
+
+}else{
+
+    document.getElementById("game-message").textContent =
+      "あなたのお題は……\n\n" +
+      window.citizenBook;
+  }
+
+  // お題表示中にする
+  window.showingBook = true;
+}else{
+
+  // ②お題を見終わったので次のプレイヤーへ
+  window.currentPlayer++;
+
+  // お題表示状態を解除
+  window.showingBook = false;
+
+  // 次のプレイヤーを表示
+  if(window.currentPlayer <window.nicknames.length){
+
 
   // まだ参考書は表示しない
   document.getElementById("game-message").textContent =
