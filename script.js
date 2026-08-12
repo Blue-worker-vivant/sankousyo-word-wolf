@@ -432,6 +432,31 @@ function goNextFromDifficulty(){
 
 function showNextPlayer(){
 
+  // 現在表示しているプレイヤー
+  const playerIndex = window.currentPlayer;
+
+  // 直前に表示したプレイヤーの番号
+  const actualPlayer = playerIndex - 1;
+
+  // おのたやかどうか
+  const isSolf =
+    window.wolves.includes(actualPlayer);
+
+  // 参考書も表示
+  if(osWolf){
+
+    document.getElementById("game-message").textContent =
+      "あなたのお題は……\n\n" +
+      window.wolfBook;
+
+  }else{
+
+    document.getElementById("game-message").textContent =
+      "あなたのお題は……\n\n" +
+      window.citizenBook;
+  }
+}
+
   // 全員終わったら終了
   if(window.currentPlayer >= window.nicknames.length){
 
