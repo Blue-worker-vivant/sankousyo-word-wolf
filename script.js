@@ -491,14 +491,21 @@ function goNextFromDifficulty(){
   // 次のプレイヤーを表示
   if(window.currentPlayer <window.nicknames.length){
 
+    const playerName =
+      window.nicknames[window.currentPlayer];
 
+    document.getElementById("game-player-name").textContent =
+      playerName + "の番";
 
+    document.getElementById("game-message").textContent =
+      "「確認する」を押すと、あなたのお題が出るぞお";
+  }else{
 
-    
-  // まだ参考書は表示しない
-  document.getElementById("game-message").textContent =
-    "「確認する」を押すと、あなたのお題が出るぞお";
+    document.getElementById("game-player-name").textContent =
+      "全員確認終わりだあ";
 
-  // 今のプレイヤーを記録してから次へ進める
-  window.currentPlayer++;
+    document.getElementById("game-message").textContent =
+      "ゲームを始めるぞお";
+  }
+ }
 }
