@@ -492,6 +492,9 @@ function goNextFromDifficulty(){
   if(window.currentPlayer <window.nicknames.length){
 
 
+
+
+    
   // まだ参考書は表示しない
   document.getElementById("game-message").textContent =
     "「確認する」を押すと、あなたのお題が出るぞお";
