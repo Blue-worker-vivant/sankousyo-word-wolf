@@ -425,9 +425,6 @@ function goNextFromDifficulty(){
   // ゲーム画面を表示
   document.getElementById("game-screen").style.display = "block";
 
-  // 最初のプレイヤー
-  window.currentPlayer = 0;
-
   // まだお題は表示していない
   window.showingBook = false;
 
