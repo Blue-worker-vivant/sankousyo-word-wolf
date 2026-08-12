@@ -440,13 +440,7 @@ function goNextFromDifficulty(){
 
   document.getElementById("game-message").textContent =
     "「確認する」をおすと、あなたのお題が表示されます。";
-
-
-  // 現在のプレイヤー
-  window.currentPlayer = 0;
-
-  // お題を表示している状態かどうか
-  window.showingBook = false;
+}
 
   function gameButton(){
 
